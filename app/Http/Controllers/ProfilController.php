@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\profil;
 use Illuminate\Http\Request;
+use Auth;
 
 class ProfilController extends Controller
 {
@@ -12,6 +13,10 @@ class ProfilController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         //
